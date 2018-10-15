@@ -1,0 +1,20 @@
+<svg *ngFor="let svg of svgs" width="500px" height="500px" viewBox="0 0 42 42" class="donut" aria-labelledby="beers-title beers-desc"
+  role="img">
+
+  <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff" role="presentation"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"
+    role="presentation"></circle>
+  <circle *ngFor="let circle of svg.circle" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent"
+    [attr.stroke]="circle.color" stroke-width="3" [attr.stroke-dasharray]="circle.dasharray" [attr.stroke-dashoffset]="circle.dashoffset"
+    aria-labelledby="donut-segment-1-title donut-segment-1-desc">
+  </circle>
+  <!-- unused 10% -->
+  <g class="chart-text">
+    <text x="50%" y="50%" class="chart-number">
+      {{ svg.title}}
+    </text>
+    <text x="50%" y="50%" class="chart-label">
+      {{svg.count_title}}
+    </text>
+  </g>
+</svg>
